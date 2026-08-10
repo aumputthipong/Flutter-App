@@ -67,6 +67,13 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  void _resetCounter() {
+    setState(() {
+      // ตั้งค่าตัวนับกลับเป็น 0 แล้วสั่งวาดจอใหม่
+      _counter = 0;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     // This method is rerun every time setState is called, for instance as done
@@ -84,6 +91,14 @@ class _MyHomePageState extends State<MyHomePage> {
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
+        actions: [
+          // ปุ่มไอคอนบนแถบด้านบน — กดเพื่อรีเซ็ตตัวนับ
+          IconButton(
+            icon: const Icon(Icons.refresh),
+            tooltip: 'รีเซ็ต',
+            onPressed: _resetCounter,
+          ),
+        ],
       ),
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
