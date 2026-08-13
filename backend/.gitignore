@@ -1,0 +1,7 @@
+# ไฟล์ที่คอมไพล์แล้ว (ได้จาก go build)
+*.exe
+productapi
+/backend
+
+# ไฟล์ทดสอบ coverage
+*.out
